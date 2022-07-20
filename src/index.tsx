@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
+import {  ChakraProvider } from '@chakra-ui/react'
 //https://typeofnan.dev/your-first-react-typescript-project-todo-app/
 
 const root = ReactDOM.createRoot(
@@ -8,7 +9,9 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
+    <ChakraProvider>
     <App />
+    </ChakraProvider>
   </React.StrictMode>
 );
 

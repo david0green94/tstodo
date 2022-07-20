@@ -1,5 +1,12 @@
 import React from "react";  
 import { TodoListItem } from "./TodoListItem";
+import {
+    List,
+    ListItem,
+    ListIcon,
+    OrderedList,
+    UnorderedList,
+  } from '@chakra-ui/react'
 
 interface Props {
 
@@ -10,14 +17,14 @@ interface Props {
 export const TodoList: React.FC<Props> = ({todos,toggleTodo}) => {
 return (
 
-    <ul>
+    <UnorderedList>
 
 {todos.map((todo) => (
 
     <TodoListItem key={todo.text} todo={todo} toggleTodo={toggleTodo} />
 ))}
 
-    </ul>
+    </UnorderedList>
 )
 
 }

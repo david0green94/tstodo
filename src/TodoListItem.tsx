@@ -1,4 +1,11 @@
 import React from "react";
+import {
+    List,
+    ListItem,
+    ListIcon,
+    OrderedList,
+    UnorderedList,
+  } from '@chakra-ui/react'
 
 
 
@@ -11,7 +18,7 @@ export const TodoListItem: React.FC<Props> = ({ todo, toggleTodo }) => {
 // Dont really understand the interface and <Props> part, but it sure looks like C# Types. 
     return (
 
-        <li>
+        <ListItem>
             <label
                 style={{ textDecoration: todo.complete ? 'line-through' : undefined }}
             >
@@ -26,6 +33,6 @@ export const TodoListItem: React.FC<Props> = ({ todo, toggleTodo }) => {
                 {todo.text}
 
             </label>
-        </li>
+        </ListItem>
     );
 };
