@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { ChangeEvent, useState } from 'react';
 import { AddTodoForm } from './AddTodoForm';
 import { TodoList } from './TodoList';
 
@@ -6,6 +6,7 @@ import { TodoList } from './TodoList';
 
 const initialTodos: Todo[] = [
   {
+    
     text: 'Walk the dog',
     complete: false,
   },
@@ -16,9 +17,20 @@ const initialTodos: Todo[] = [
 ];
 
 
-function App() {
+export default function App() {
   const [todos, setTodos] = useState(initialTodos); // returns the current stae and a function to set the state. 
+ 
+  const deleteTodo = (selectedTodo: Todo) => { //function toggletodo, takes in a Todo of type Selected Todo??
+    const newTodos = todos.filter(x => x !== selectedTodo);
+      console.log("Delete Todo")
+      console.log("todo:" )
+      console.log("Selectedtodo" , selectedTodo)
+      console.log("newTodos", newTodos)
 
+    setTodos(newTodos)
+  }
+    
+  
   const toggleTodo = (selectedTodo: Todo) => { //function toggletodo, takes in a Todo of type Selected Todo??
     const newTodos = todos.map((todo) => {
       if (todo === selectedTodo) {
@@ -33,6 +45,7 @@ function App() {
     setTodos(newTodos);
   };
 
+  
   const addTodo: AddTodo = (text:string) => {
     const newTodo = {
       text,
@@ -42,8 +55,9 @@ function App() {
 
   return(
   <>
-  <TodoList todos={todos} toggleTodo={toggleTodo} />
+  <TodoList todos={todos} toggleTodo={toggleTodo} deleteTodo={deleteTodo} />
   <AddTodoForm addTodo={addTodo}/>
+ 
   </>
   );
 }
@@ -51,4 +65,4 @@ function App() {
 
 
 
-export default App;
+
