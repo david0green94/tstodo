@@ -1,5 +1,5 @@
 import React from "react";
-import {TodoList} from './TodoList'
+import { TodoList } from './TodoList'
 
 
 
@@ -12,8 +12,8 @@ interface Props {
 
 export const TodoListItem: React.FC<Props> = ({ todo, toggleTodo, deleteTodo }) => {
 
-    
-    
+
+
 
     return (
 
@@ -30,17 +30,16 @@ export const TodoListItem: React.FC<Props> = ({ todo, toggleTodo, deleteTodo }) 
                 />{' '}
 
                 {todo.text}
-                
-                <button 
-                className="DeleteTodo" 
-                onClick={() => {
-                    deleteTodo(todo);
-                }}
-                />
-                 X
-                
-                    
 
+                <span onClick={() => {
+                    deleteTodo(todo);
+                }} role="button" style={{
+                    color: 'red',
+                    fontWeight: 'bold',
+                    marginLeft: 10,
+                    cursor: "pointer"
+
+                }}>x</span>
             </label>
         </li>
     );
