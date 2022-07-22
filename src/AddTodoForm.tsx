@@ -10,7 +10,7 @@ export const AddTodoForm: React.FC<Props> = ({addTodo}) => {
     const [text, setText] = useState('');
 
     return(
-        <form>
+        <form className='addform'>
             <input 
                 type='text'
                 value={text}

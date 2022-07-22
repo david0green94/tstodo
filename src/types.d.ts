@@ -5,5 +5,6 @@ interface Todo {
 }
 
 type ToggleTodo = (selectedTodo: Todo) => void;
+type DeleteTodo = (selectedTodo: Todo) => void;
 type AddTodo = (text: string) => void;
-type DeleteTodo = (e: ChangeEvent<HTMLButtonElement>) => void;
+//type DeleteTodo = (e: ChangeEvent<HTMLButtonElement>) => void;

@@ -1,0 +1,21 @@
+.list-item-container{
+
+    border:solid;
+    border-radius: 5px;
+}
+
+.todolist-container{
+
+    border:solid red;
+    border-radius: 5px;
+    width: 50%;
+    align-content: center;
+    margin:auto;}
+
+    .addform{
+
+        margin:auto;
+        align-self: center;
+        width:30px;
+        
+    }

@@ -1,5 +1,5 @@
 import React from "react";
-import { TodoList } from './TodoList'
+import './styles.css';
 
 
 
@@ -18,6 +18,7 @@ export const TodoListItem: React.FC<Props> = ({ todo, toggleTodo, deleteTodo }) 
     return (
 
         <li>
+            
             <label
                 style={{ textDecoration: todo.complete ? 'line-through' : undefined }}
             >
@@ -35,12 +36,14 @@ export const TodoListItem: React.FC<Props> = ({ todo, toggleTodo, deleteTodo }) 
                     deleteTodo(todo);
                 }} role="button" style={{
                     color: 'red',
+                    fontSize: 30,
                     fontWeight: 'bold',
                     marginLeft: 10,
                     cursor: "pointer"
 
                 }}>x</span>
             </label>
+            
         </li>
     );
 };
